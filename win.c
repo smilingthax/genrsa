@@ -103,14 +103,14 @@ fprintf(stderr, "Done...\n");
 
 		// TODO ? rounding?
 		RSAPRIV out={
-			n: data, nLen: bytes,
-			e: (BYTE *)&pub->pubexp, eLen: sizeof(DWORD), // trick
-			d: data+7*bytes/2, dLen: bytes,
-			p: data+2*bytes/2, pLen: bytes/2, // TODO?  swap p,q ?  -> must recalculate qInv...
-			q: data+3*bytes/2, qLen: bytes/2,
-			dp: data+4*bytes/2, dpLen: bytes/2,
-			dq: data+5*bytes/2, dqLen: bytes/2,
-			qinv: data+6*bytes/2, qinvLen: bytes/2,
+			.n = data, .nLen = bytes,
+			.e = (BYTE *)&pub->pubexp, .eLen = sizeof(DWORD), // trick
+			.d = data+7*bytes/2, .dLen = bytes,
+			.p = data+2*bytes/2, .pLen = bytes/2, // TODO?  swap p,q ?  -> must recalculate qInv...
+			.q = data+3*bytes/2, .qLen = bytes/2,
+			.dp = data+4*bytes/2, .dpLen = bytes/2,
+			.dq = data+5*bytes/2, .dqLen = bytes/2,
+			.qinv = data+6*bytes/2, .qinvLen = bytes/2
 		};
 
 		// NOTE: output.c has to be compiled with BIGINT_LE!
