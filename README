@@ -1,0 +1,12 @@
+
+This provides small wrappers for native (and hopefully fast) RSA key
+generation methods -- which nodejs crypto lacks (and instead of a
+pure JS implementation).
+
+The basic idea is to distribute a pre-compiled genrsa-executable for each
+platform, which the nodejs-module can run as child process.
+
+Copyright (c) 2015 Tobias Hoffmann
+
+License: http://opensource.org/licenses/MIT
+
