@@ -1,0 +1,12 @@
+
+MINGW=i686-w64-mingw32-
+CC=$(MINGW)gcc
+
+all: genrsa.exe
+
+clean:
+	$(RM) genrsa.exe
+
+genrsa.exe: win.c output.c
+	$(CC) -o $@ $^ -O3 -Wall -DBIGINT_LE
+
