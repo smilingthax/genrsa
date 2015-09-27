@@ -1,0 +1,9 @@
+
+all: genrsa
+
+clean:
+	$(RM) genrsa
+
+genrsa: osx-spi.c output.c
+	$(CC) -o $@ $^ -Wall -O3
+
